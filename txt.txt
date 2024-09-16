@@ -1,0 +1,33 @@
+Imperative Programming =>  you explicitly define a sequence of instructions or steps to achieve a specific outcome.
+Declarative Programming =>  you describe what you want to achieve rather than detailing the steps to get there.
+
+Functional programming => is a way to write code where you use functions to do everything and encourages writing
+                          code that is more declarative.
+
+In functional programming:
+1-Functions are used to perform a specific task (addFive).
+2-Streams allow you to apply this function to each item in a list without modifying the original list.
+3-New Data is created from the results of applying the function.
+4-We can combine functions to build more complex operations.
+
+Example:
+
+ Function<Integer, Integer> addFive = x -> x + 5;
+
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4);
+
+        List<Integer> newNumbers = numbers.stream()
+                                          .map(addFive)
+                                          .collect(Collectors.toList());
+
+        System.out.println(newNumbers);  // Output: [6, 7, 8, 9]
+
+lambda expressions => are used to provide a clear and concise way to implement functional interfaces
+lambda expressions => enable functional programming in Java, where you can treat functions
+                      passing them as arguments, or returning them from methods.
+
+Some functional interface in java:
+1- Function
+2- Predicate
+3- Consumer
+4- Supplier
